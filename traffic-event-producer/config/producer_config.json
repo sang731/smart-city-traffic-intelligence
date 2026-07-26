@@ -1,0 +1,6 @@
+{
+  "dataset_profile": "config/dataset-profiles/bangalore-data.json",
+  "dataset_path": "data/bangalore_traffic_timely_data.csv",
+  "event_interval_seconds": 1,
+  "replay_mode": true
+}

@@ -1,0 +1,31 @@
+{
+  "dataset_name": "bangalore_traffic_timely_data",
+  "city": "Bengaluru",
+  "timestamp_column": "Date",
+  
+  "location_columns": [
+    "Area Name",
+    "Road/Intersection Name"
+  ],
+
+  "metrics": {
+    "traffic_volume": "Traffic Volume",
+    "average_speed": "Average Speed",
+    "travel_time_index": "Travel Time Index",
+    "congestion_level": "Congestion Level",
+    "road_capacity_utilization": "Road Capacity Utilization",
+    "incident_reports": "Incident Reports",
+    "environmental_impact": "Environmental Impact",
+    "public_transport_usage": "Public Transport Usage",
+    "traffic_signal_compliance": "Traffic Signal Compliance",
+    "parking_usage": "Parking Usage",
+    "pedestrian_cyclist_count": "Pedestrian and Cyclist Count"
+  },
+  
+  "metadata":{
+    "weather": "Weather Conditions",
+    "roadwork": "Roadwork and Construction Activity",
+    "time_block": "TimeBlock",
+    "traffic_situation": "TrafficSituation"
+  }
+}
