@@ -1,0 +1,13 @@
+# Python
+venv/
+__pycache__/
+
+# Java
+target/
+
+# IntelliJ
+.idea/
+*.iml
+
+# Secrets
+.env
