@@ -1,0 +1,18 @@
+version: 2
+
+models:
+
+  - name: mart_city_summary
+    description: City level traffic KPIs
+
+  - name: mart_congestion
+    description: Congestion analytics
+
+  - name: mart_incident_summary
+    description: Incident analytics
+
+  - name: mart_peak_hours
+    description: Peak hour analysis
+
+  - name: mart_environmental_impact
+    description: Environmental impact dashboard

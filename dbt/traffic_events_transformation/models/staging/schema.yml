@@ -1,0 +1,15 @@
+version: 2
+
+models:
+  - name: stg_traffic_events
+    columns:
+      - name: EVENT_ID
+        tests:
+          - unique
+          - not_null
+      - name: SENSOR_ID
+        tests:
+          - not_null
+      - name: CITY
+        tests:
+          - not_null

@@ -1,0 +1,25 @@
+select
+RAW_DATA:event_id::STRING  AS EVENT_ID,
+RAW_DATA:sensor_id::STRING  AS SENSOR_ID,
+RAW_DATA:city::STRING AS CITY,
+SPLIT_PART(RAW_DATA:location::STRING,'|',1) AS AREA,
+SPLIT_PART(RAW_DATA:location::STRING,'|',2) AS ROAD_NAME,
+RAW_DATA:metrics:traffic_volume::NUMBER AS TRAFFIC_VOLUME,
+RAW_DATA:metrics:average_speed::FLOAT AS AVERAGE_SPEED,
+RAW_DATA:metrics:travel_time_index::FLOAT AS TRAVEL_TIME_INDEX,
+RAW_DATA:metrics:congestion_level::STRING AS CONGESTION_LEVEL,
+RAW_DATA:metrics:road_capacity_utilization::FLOAT AS ROAD_CAPACITY_UTILIZATION,
+RAW_DATA:metrics:incident_reports::NUMBER AS INCIDENT_REPORTS,
+RAW_DATA:metrics:environmental_impact::FLOAT  AS ENVIRONMENTAL_IMPACT,
+RAW_DATA:metrics:public_transport_usage::FLOAT AS PUBLIC_TRANSPORT_USAGE,
+RAW_DATA:metrics:traffic_signal_compliance::FLOAT AS TRAFFIC_SIGNAL_COMPLIANCE,
+RAW_DATA:metrics:parking_usage::FLOAT AS PARKING_USAGE,
+RAW_DATA:metrics:pedestrian_cyclist_count::NUMBER AS PEDESTRIAN_CYCLIST_COUNT,
+RAW_DATA:metadata:weather::STRING  AS WEATHER,
+RAW_DATA:metadata:roadwork::STRING AS ROADWORK,
+RAW_DATA:metadata:time_block::STRING AS TIMEBLOCK,
+RAW_DATA:metadata:traffic_situation::STRING AS TRAFFIC_SITUATION,
+RAW_DATA:event_timestamp::TIMESTAMP AS EVENT_TIMESTAMP,
+LOAD_TIME
+
+FROM {{ source('bronze','raw_traffic_events') }}

@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: bronze
+    database: traffic_intelligence_db
+    schema: bronze
+
+    tables:
+      - name: raw_traffic_events

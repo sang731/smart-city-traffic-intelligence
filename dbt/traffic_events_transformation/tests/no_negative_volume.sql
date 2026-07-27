@@ -1,0 +1,1 @@
+SELECT * FROM {{ ref('traffic_events_clean') }} WHERE TRAFFIC_VOLUME < 0

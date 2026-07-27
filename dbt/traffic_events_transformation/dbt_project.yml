@@ -1,0 +1,22 @@
+name: smart_city_traffic_intelligence
+
+profile: smart_city_traffic_intelligence
+
+seed-paths: ["seeds"]
+model-paths: ["models"]
+macro-paths: ["macros"]
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+  smart_city_traffic_intelligence:
+    staging:
+      +materialized: view
+      +schema: staging
+    silver:
+      +materialized: incremental
+      +schema: silver
+    gold:
+      +materialized: table
+      +schema: gold

@@ -1,0 +1,20 @@
+version: 2
+
+models:
+  - name: traffic_events_clean
+    description: Cleaned traffic events
+
+    columns:
+      - name: EVENT_ID
+        tests:
+          - unique
+          - not_null
+      - name: CITY
+        tests:
+          - not_null
+      - name: TRAFFIC_VOLUME
+        tests:
+          - not_null
+      - name: EVENT_TIMESTAMP
+        tests:
+          - not_null
