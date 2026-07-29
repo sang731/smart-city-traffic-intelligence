@@ -1,0 +1,46 @@
+@if(loading){
+    <app-loading></app-loading>
+}
+@else{
+    <div class="dashboard">
+
+        <div class="page-title">
+            <h1>Traffic Overview</h1>
+            <button class="transparent-btn" (click)="ngOnInit()">
+                <mat-icon>refresh</mat-icon>
+            </button>
+        </div>
+
+        <div class="error" *ngIf="error()">
+            {{ error() }}
+        </div>
+
+        <div  class="empty" *ngIf="!loading && citySummary().length===0">
+            No analytics available.
+        </div>
+
+        <ng-container *ngIf="!loading && citySummary().length!=0">
+            <div class="kpi-grid">
+                <app-kpi-card title="Total Events" icon="traffic" [value]="citySummary().length ? citySummary()[0].TOTAL_EVENTS : 0" subtitle="Traffic events"></app-kpi-card>
+                <app-kpi-card title="Average Speed" icon="speed" [value]="citySummary().length ? citySummary()[0].AVG_SPEED.toFixed(1) + ' km/h' : '0 km/h'" subtitle="Across all roads"></app-kpi-card>
+                <app-kpi-card title="Incidents" icon="warning" [value]="citySummary().length ? citySummary()[0].TOTAL_INCIDENTS : 0" subtitle="Reported incidents"></app-kpi-card>
+                <app-kpi-card title="Public Transport" icon="directions_bus" [value]="citySummary().length ? citySummary()[0].AVG_PUBLIC_TRANSPORT_USAGE.toFixed(1)+'%' : '0%'" subtitle="Average usage"></app-kpi-card>
+            </div>
+
+            <div class="environment-section">
+                <app-environment-card [data]="environmentalImpact()"></app-environment-card>
+            </div>
+            
+            <div class="chart-grid">
+                <app-traffic-volume-chart [data]="citySummary()"></app-traffic-volume-chart>
+                <app-congestion-chart [data]="congestionAnalytics()"></app-congestion-chart>
+            </div>
+
+            <div class="table-grid">
+                <app-peak-hours-table [data]="peakHours()"></app-peak-hours-table>
+                <app-incidents-table [data]="incidents()"></app-incidents-table>
+            </div>
+        </ng-container>
+
+    </div>
+}

@@ -1,0 +1,24 @@
+@if(loading){
+    <app-loading></app-loading>
+}
+
+@else{
+    <div class="analytics">
+
+    <div class="page-title">
+        <h1>Traffic Data Analytics</h1>
+        <button class="transparent-btn" (click)="ngOnInit()">
+            <mat-icon>refresh</mat-icon>
+        </button>
+    </div>
+
+    <app-filter-panel (filterChanged)="onFilterChanged($event)"></app-filter-panel>
+
+    <div class="chart-grid">
+        <app-traffic-chart [data]="filteredCongestion()"></app-traffic-chart>
+        <app-speed-chart [data]="filteredCongestion()"></app-speed-chart>
+    </div>
+    <app-environmental-chart [data]="environmental()"></app-environmental-chart>
+    <app-analytics-table [data]="filteredCongestion()"></app-analytics-table>
+</div>
+}

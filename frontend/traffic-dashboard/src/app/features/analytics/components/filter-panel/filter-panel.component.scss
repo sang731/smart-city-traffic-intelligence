@@ -1,0 +1,79 @@
+mat-card{
+    background-color:rgb(65,65,65);
+    padding:20px;
+    margin-bottom:30px;
+}
+
+.filter-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+mat-label{
+    color:#7c70d9;
+    font-size:20px;
+    font-weight:500;
+    border-color: #1d1d1d;
+}
+
+:host ::ng-deep .filter-grid .mat-mdc-select-value-text {
+    color: #ffffff; 
+}
+:host ::ng-deep .filter-grid .mat-mdc-select-arrow {
+    color: #7c70d9; 
+}
+
+.button-row{
+    margin-top:20px;
+    display:flex;
+    justify-content:flex-end;
+    gap:15px;
+}
+
+.button-row button[mat-raised-button]{
+    background-color:#2d2d2d;
+    color:#756ac5;
+}
+
+.button-row button[mat-raised-button]:hover {
+    color:#080808;
+    background-color: #9285f5; 
+}
+
+.button-row button[mat-raised-button]:active {
+    color:#080808;
+    background-color: #6155be; 
+}
+
+.button-row button[mat-stroked-button] {
+    background-color: #2d2d2d; 
+    color: #756ac5;
+    border: 1px solid #756ac5; 
+}
+
+.button-row button[mat-stroked-button]:hover {
+    background-color: #080808;
+    color: #9285f5;
+    border-color: #9285f5;
+}
+
+.button-row button[mat-stroked-button]:active {
+    background-color: #1f1f1f;
+}
+
+@media(max-width:1200px){
+.filter-grid{
+grid-template-columns:repeat(2,1fr);
+}
+}
+
+@media(max-width:768px){
+.filter-grid{
+grid-template-columns:1fr;
+}
+
+.button-row{
+justify-content:center;
+}
+}

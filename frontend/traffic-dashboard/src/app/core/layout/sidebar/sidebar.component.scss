@@ -1,0 +1,36 @@
+:host {
+    display: block;
+    height: 100%;
+}
+
+mat-nav-list {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;  
+    padding: 8px 16px;
+    gap: 12px;
+}
+
+a[mat-list-item] {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    height: 52px;
+    color: #7f79d8;
+    font-weight: 500;
+    transition: all .25s ease;
+}
+
+a[mat-list-item]:hover {
+    background: rgba(255,255,255,.08);
+}
+
+a.active {
+    background: #5b5fc7;
+    color: white;
+}
+
+mat-icon {
+    color: #7f79d8;
+}

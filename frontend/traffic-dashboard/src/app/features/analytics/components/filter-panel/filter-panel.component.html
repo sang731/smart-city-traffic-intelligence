@@ -1,0 +1,25 @@
+<mat-card>
+    <div class="filter-grid">
+        <mat-form-field appearance="outline">
+            <mat-label>Area</mat-label>
+            <mat-select [(ngModel)]="filter.area">
+                <mat-option value="">All</mat-option>
+                <mat-option *ngFor="let area of areas" [value]="area">{{area}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Congestion</mat-label>
+            <mat-select [(ngModel)]="filter.congestionLevel">
+                <mat-option value="">All</mat-option>
+                <mat-option *ngFor="let congestionLevel of congestionLevels" [value]="congestionLevel">{{congestionLevel}}</mat-option>
+            </mat-select>
+
+        </mat-form-field>
+    </div>
+
+    <div class="button-row">
+        <button mat-raised-button (click)="applyFilters()">Apply</button>
+        <button mat-stroked-button (click)="clearFilters()">Clear</button>
+    </div>
+</mat-card>

@@ -1,0 +1,36 @@
+<div class="environment-card">
+    <div class="metrics-grid">
+        <div class="metric">
+            <mat-icon>eco</mat-icon>
+            <div>
+                <h3>Environmental Impact</h3>
+                <p>{{ averageEnvironmentalImpact | number:'1.1-2' }}</p>
+            </div>
+        </div>
+
+        <div class="metric">
+            <mat-icon>local_parking</mat-icon>
+            <div>
+                <h3>Parking Usage</h3>
+                <p>{{ averageParkingUsage | number:'1.1-2' }}%</p>
+            </div>
+        </div>
+
+        <div class="metric">
+            <mat-icon>directions_walk</mat-icon>
+            <div>
+                <h3>Pedestrian Count</h3>
+                <p>{{ averagePedestrianCount | number:'1.0-0' }}</p>
+            </div>
+        </div>
+
+        <div class="metric">
+            <mat-icon>traffic</mat-icon>
+            <div>
+                <h3>Signal Compliance</h3>
+                <p>{{ averageSignalCompliance | number:'1.1-2' }}%</p>
+            </div>
+        </div>
+
+    </div>
+</div>

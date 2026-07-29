@@ -1,0 +1,53 @@
+<div class="table-card">
+    <div class="header"><h2>Traffic Analytics</h2>
+        <mat-form-field appearance="outline">
+            <mat-label> Search</mat-label>
+            <input matInput (keyup)="applyFilter($event)">
+        </mat-form-field>
+    </div>
+
+    <table mat-table [dataSource]="dataSource" matSort>
+        <ng-container matColumnDef="city">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>City</th>
+            <td mat-cell *matCellDef="let row">{{row.CITY}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="area">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Area</th>
+            <td mat-cell *matCellDef="let row">{{row.AREA}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="road">
+            <th mat-header-cell *matHeaderCellDef>Road</th>
+            <td mat-cell *matCellDef="let row">{{row.ROAD_NAME}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="level">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Congestion Level</th>
+            <td mat-cell *matCellDef="let row">{{row.CONGESTION_LEVEL}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="volume">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Traffic Volume</th>
+            <td mat-cell *matCellDef="let row">
+                {{row.AVG_TRAFFIC | number:'1.2-2'}}
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="speed">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Speed</th>
+            <td mat-cell *matCellDef="let row">{{row.AVG_SPEED | number:'1.2-2'}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="capacity">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Capacity %</th>
+            <td mat-cell *matCellDef="let row">{{row.CAPACITY_UTILIZATION | number:'1.2-2'}}</td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky:true"></tr>
+        <tr mat-row *matRowDef="let row; columns:displayedColumns"></tr>
+    </table>
+
+    <mat-paginator [pageSize]="10" [pageSizeOptions]="[10,20,50]"></mat-paginator>
+
+</div>

@@ -1,0 +1,46 @@
+@if(loading){
+    <app-loading></app-loading>
+}
+
+@else{
+    <div class="reports">
+        <h1>Reports</h1>
+        <p>Last Updated : {{lastUpdated | date:'medium'}}</p>
+
+        <div class="summary">
+            <mat-card>
+                <h2>Cities</h2>
+                <h1>{{citySummary().length}}</h1>
+            </mat-card>
+
+            <mat-card>
+                <h2>Congestion Records</h2>
+                <h1>{{congestion().length}}</h1>
+            </mat-card>
+
+            <mat-card>
+                <h2>Incident Records</h2>
+                <h1>{{incidents().length}}</h1>
+            </mat-card>
+        </div>
+
+        <div class="actions">
+            <button mat-raised-button color="primary"  (click)="exportCsv('city-summary.csv',citySummary())">
+                <mat-icon>download</mat-icon> City Summary
+            </button>
+
+            <button mat-raised-button color="accent" (click)="exportCsv('congestion.csv',congestion())">
+                <mat-icon>download</mat-icon> Congestion
+            </button>
+
+            <button mat-raised-button (click)="exportCsv('incidents.csv',incidents())">
+                <mat-icon>download</mat-icon> Incidents
+            </button>
+
+            <button mat-raised-button color="warn" (click)="printReport()">
+                <mat-icon>print</mat-icon> Print
+            </button>
+        </div>
+
+    </div>
+}

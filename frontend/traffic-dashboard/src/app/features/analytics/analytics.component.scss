@@ -1,0 +1,42 @@
+.analytics{
+    padding:30px;
+}
+
+.page-title{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:40px;
+}
+
+h1{
+    font-size:42px;
+    font-weight:700;
+    color:#756ac5;
+}
+
+.transparent-btn {
+  background-color: transparent;
+  box-shadow: none;
+  border:none;
+  outline:none;
+}
+
+mat-icon{
+    color:#756ac5;
+    font-size: x-large;
+}
+
+.chart-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:24px;
+    margin-top:24px;
+    margin-bottom:24px;
+}
+
+@media(max-width:1000px){
+.chart-grid{
+grid-template-columns:1fr;
+}
+}

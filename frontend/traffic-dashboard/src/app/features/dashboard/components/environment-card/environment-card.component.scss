@@ -1,0 +1,52 @@
+.environment-card{
+    background:#2c2c2c90;
+    border-radius:16px;
+    padding:24px;
+    box-shadow:0 2px 8px rgba(0,0,0,.08);
+}
+
+.environment-card h2{
+    margin-bottom:24px;
+    font-size:22px;
+    font-weight:600;
+}
+
+.metrics-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.metric{
+    display:flex;
+    align-items:center;
+    gap:16px;
+    padding:16px;
+    border-radius:12px;
+    background:#3b3b3b;
+}
+
+.metric:hover{
+    transform:translateY(-6px);
+    box-shadow:0 15px 30px rgba(0,0,0,.12);
+    transition:.25s ease;
+}
+
+mat-icon{
+    color:#4b885d;
+}
+
+.metric h3{
+    margin:0;
+    font-size:15px;
+    font-weight:500;
+    color:#d8d8d8;
+}
+
+.metric p{
+    margin-top:8px;
+    margin-bottom:0;
+    font-size:24px;
+    font-weight:700;
+    color:#4b885d;
+}
